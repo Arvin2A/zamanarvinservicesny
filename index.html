@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<title>Zaman Arvin Services NY</title>
+<meta name="description" content="Private, invite-only web hosting. Free, or rejected.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1eee6;
+    --paper-2: #e7e2d6;
+    --ink: #121212;
+    --ink-soft: #55524b;
+    --rule: #121212;
+    --red: #d8331f;
+    --green: #1f7a4a;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ink); }
+  body {
+    background: var(--ink);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  .page {
+    width: 1024px;
+    height: 5120px;
+    margin: 0 auto;
+    background: url("bgTexture.png") top left / 1024px 5120px no-repeat, var(--paper);
+    background-blend-mode: multiply;
+    overflow: hidden;
+  }
+
+  section { position: relative; padding: 0 64px; overflow: hidden; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .eyebrow b { color: var(--red); font-weight: 700; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 72px;
+    line-height: .95;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 3px solid var(--rule);
+    padding-top: 20px;
+    margin-bottom: 56px;
+  }
+  .section-head .num { font-family: var(--mono); font-size: 13px; letter-spacing: .14em; }
+
+  /* ---------- 01 HERO (960) ---------- */
+  .hero { height: 960px; padding-top: 32px; }
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+  .brand-mark {
+    width: 28px; height: 28px; background: var(--ink); color: var(--paper);
+    display: grid; place-items: center; font-family: var(--display); font-size: 14px;
+  }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { color: var(--red); }
+
+  .status {
+    margin-top: 120px;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 2px solid var(--ink); padding: 8px 14px;
+    font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--red); animation: blink 1.6s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .15; } }
+
+  .hero h1 {
+    margin-top: 36px;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 150px;
+    line-height: .86;
+    letter-spacing: -.035em;
+    text-transform: uppercase;
+  }
+  .hero h1 .strike { color: var(--red); position: relative; display: inline-block; }
+  .hero h1 .strike::after {
+    content: ""; position: absolute; left: -2%; right: -2%; top: 50%;
+    height: 14px; background: var(--ink); transform: rotate(-4deg);
+  }
+
+  .hero-foot {
+    margin-top: 72px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end;
+  }
+  .hero-foot p { font-size: 22px; line-height: 1.45; max-width: 26ch; }
+  .hero-foot .cta-wrap { justify-self: end; text-align: right; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: var(--ink); color: var(--paper);
+    padding: 22px 30px; text-decoration: none;
+    font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    border: 2px solid var(--ink);
+    transition: background .15s, color .15s;
+  }
+  .btn:hover { background: var(--red); border-color: var(--red); }
+  .btn .arrow { font-size: 20px; }
+  .cta-note { margin-top: 12px; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); letter-spacing: .06em; }
+
+  /* ---------- ticker ---------- */
+  .ticker {
+    height: 64px; background: var(--ink); color: var(--paper);
+    display: flex; align-items: center; overflow: hidden; white-space: nowrap;
+    font-family: var(--display); font-size: 26px; text-transform: uppercase;
+  }
+  .ticker-track { display: inline-flex; gap: 40px; animation: scroll 28s linear infinite; padding-left: 40px; }
+  .ticker-track span.r { color: var(--red); }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* ---------- 02 PROCESS (760) ---------- */
+  .process { height: 760px; padding-top: 96px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+  .step { border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 32px 28px 36px; height: 380px; display: flex; flex-direction: column; }
+  .step .n { font-family: var(--display); font-size: 96px; line-height: 1; color: var(--paper-2); -webkit-text-stroke: 2px var(--ink); }
+  .step h3 { margin-top: auto; font-family: var(--display); font-weight: 400; font-size: 28px; text-transform: uppercase; line-height: 1; }
+  .step p { margin-top: 14px; font-size: 16px; color: var(--ink-soft); }
+  .step:nth-child(2) { background: var(--ink); color: var(--paper); }
+  .step:nth-child(2) p { color: #bdb8ad; }
+  .step:nth-child(2) .n { color: var(--ink); -webkit-text-stroke: 2px var(--paper); }
+
+  /* ---------- 03 SUBDOMAIN (640) ---------- */
+  .subdomain { height: 640px; padding-top: 56px; }
+  .terminal {
+    background: var(--ink); color: var(--paper);
+    font-family: var(--mono); font-size: 17px;
+    border: 2px solid var(--ink);
+  }
+  .term-bar { display: flex; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #2c2c2c; align-items: center; }
+  .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #3a3a3a; display: block; }
+  .term-bar span { margin-left: auto; font-size: 12px; color: #7d7a73; letter-spacing: .1em; text-transform: uppercase; }
+  .term-body { padding: 24px 28px 26px; line-height: 1.8; }
+  .term-body .p { color: #7d7a73; }
+  .term-body .ok { color: #6fd39b; }
+  .term-body .no { color: #ff6a55; }
+  .url-big {
+    margin-top: 28px;
+    font-family: var(--mono); font-size: 34px; letter-spacing: -.01em;
+    border-bottom: 3px solid var(--ink); padding-bottom: 14px;
+    white-space: nowrap;
+  }
+  .url-big .you { background: var(--red); color: var(--paper); padding: 0 8px; }
+  .url-caption { margin-top: 14px; font-size: 16px; color: var(--ink-soft); }
+
+  /* ---------- 04 TERMS (720) ---------- */
+  .terms { height: 720px; padding-top: 56px; }
+  .ledger { border-top: 3px solid var(--ink); }
+  .ledger-row {
+    display: grid; grid-template-columns: 240px 1fr 220px; align-items: center;
+    border-bottom: 1px solid var(--ink); height: 88px; gap: 24px;
+  }
+  .ledger-row .k { font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  .ledger-row .v { font-size: 19px; }
+  .ledger-row .big { justify-self: end; font-family: var(--display); font-size: 48px; text-transform: uppercase; line-height: 1; }
+  .ledger-row .big.red { color: var(--red); }
+
+  /* ---------- 05 VERDICT (680) ---------- */
+  .verdict { height: 680px; padding-top: 56px; }
+  .verdicts { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 2px solid var(--ink); }
+  .card { height: 400px; padding: 36px 32px; display: flex; flex-direction: column; }
+  .card + .card { border-left: 2px solid var(--ink); }
+  .stamp {
+    align-self: flex-start;
+    font-family: var(--display); font-size: 48px; text-transform: uppercase; line-height: 1;
+    border: 5px solid currentColor; padding: 10px 18px 8px;
+    transform: rotate(-5deg); letter-spacing: .02em;
+  }
+  .card.yes .stamp { color: var(--green); }
+  .card.no { background: var(--red); color: var(--paper); }
+  .card.no .stamp { color: var(--paper); transform: rotate(4deg); }
+  .card ul { margin-top: auto; list-style: none; }
+  .card li { padding: 12px 0; border-top: 1px solid currentColor; font-size: 17px; display: flex; gap: 12px; }
+  .card.yes li { border-color: rgba(18,18,18,.25); }
+  .card.no li { border-color: rgba(241,238,230,.4); }
+  .card li::before { font-family: var(--mono); font-weight: 700; }
+  .card.yes li::before { content: "+"; color: var(--green); }
+  .card.no li::before { content: "×"; }
+
+  /* ---------- 06 FAQ (720) ---------- */
+  .faq { height: 720px; padding-top: 56px; }
+  .qa { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; row-gap: 40px; }
+  .qa h4 { font-family: var(--display); font-weight: 400; font-size: 22px; text-transform: uppercase; line-height: 1.1; padding-top: 16px; border-top: 2px solid var(--ink); }
+  .qa p { margin-top: 10px; font-size: 16px; color: var(--ink-soft); }
+
+  /* ---------- 07 CTA + FOOTER (576) ---------- */
+  .contact { height: 576px; background: var(--ink); color: var(--paper); padding-top: 72px; }
+  .contact .eyebrow { color: #8f8b82; }
+  .contact h2 { font-size: 120px; margin-top: 20px; line-height: .88; }
+  .contact h2 span { color: var(--red); }
+  .contact-row { margin-top: 48px; display: flex; justify-content: space-between; align-items: center; }
+  .mail {
+    font-family: var(--mono); font-size: 26px; text-decoration: none;
+    border-bottom: 3px solid var(--red); padding-bottom: 6px;
+  }
+  .mail:hover { color: var(--red); }
+  .contact .btn { background: var(--red); border-color: var(--red); color: var(--paper); }
+  .contact .btn:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
+  .footer {
+    position: absolute; left: 64px; right: 64px; bottom: 32px;
+    display: flex; justify-content: space-between;
+    border-top: 1px solid #333; padding-top: 18px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #8f8b82;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 01 HERO: 960 -->
+  <section class="hero">
+    <nav class="nav">
+      <div class="brand"><div class="brand-mark">Z</div>zamanarvinservicesny.org</div>
+      <div class="nav-links">
+        <a href="#process">Process</a>
+        <a href="#terms">Terms</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Apply</a>
+      </div>
+    </nav>
+
+    <div class="status"><span class="dot"></span>Private server · Invite only</div>
+
+    <h1>Free,<br>or <span class="strike">rejected.</span></h1>
+
+    <div class="hero-foot">
+      <p>Private web hosting run by one person. Send an email, and I decide whether your site gets a home here.</p>
+      <div class="cta-wrap">
+        <a class="btn" href="mailto:zamanarvin711@gmail.com?subject=Hosting%20request">Request an invite <span class="arrow">→</span></a>
+        <div class="cta-note">No forms. No pricing page. Just email.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ticker: 64 -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Free</span><span class="r">or</span><span>Rejected</span><span>✶</span>
+      <span>Invite only</span><span>✶</span><span>$0.00</span><span>✶</span><span>No limits</span><span>✶</span>
+      <span>Free</span><span class="r">or</span><span>Rejected</span><span>✶</span>
+      <span>Invite only</span><span>✶</span><span>$0.00</span><span>✶</span><span>No limits</span><span>✶</span>
+      <span>Free</span><span class="r">or</span><span>Rejected</span><span>✶</span>
+      <span>Invite only</span><span>✶</span><span>$0.00</span><span>✶</span><span>No limits</span><span>✶</span>
+      <span>Free</span><span class="r">or</span><span>Rejected</span><span>✶</span>
+      <span>Invite only</span><span>✶</span><span>$0.00</span><span>✶</span><span>No limits</span><span>✶</span>
+    </div>
+  </div>
+
+  <!-- 02 PROCESS: 760 -->
+  <section class="process" id="process">
+    <div class="section-head">
+      <h2>How it<br>works</h2>
+      <span class="num">01 / Process</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Email me</h3>
+        <p>Write to zamanarvin711@gmail.com. Say who you are and what your site is.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>I decide</h3>
+        <p>I read it and make the call. There's no tier to upgrade to and nothing to negotiate.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>You go live</h3>
+        <p>If you're in, your page goes up as a subdomain of zamanarvinservicesny.org.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SUBDOMAIN: 640 -->
+  <section class="subdomain">
+    <div class="section-head">
+      <h2>Your<br>address</h2>
+      <span class="num">02 / Subdomain</span>
+    </div>
+    <div class="terminal">
+      <div class="term-bar"><i></i><i></i><i></i><span>request.log</span></div>
+      <div class="term-body">
+        <div><span class="p">$</span> request --site yourname</div>
+        <div><span class="p">→</span> reviewing…</div>
+        <div><span class="p">→</span> verdict: <span class="ok">ACCEPTED</span> &nbsp;<span class="p">|</span>&nbsp; cost: <span class="ok">$0.00</span></div>
+        <div><span class="p">→</span> live at https://yourname.zamanarvinservicesny.org</div>
+      </div>
+    </div>
+    <div class="url-big"><span class="you">yourname</span>.zamanarvinservicesny.org</div>
+    <p class="url-caption">Every hosted site gets its own subdomain under the main domain.</p>
+  </section>
+
+  <!-- 04 TERMS: 720 -->
+  <section class="terms" id="terms">
+    <div class="section-head">
+      <h2>The<br>terms</h2>
+      <span class="num">03 / Terms</span>
+    </div>
+    <div class="ledger">
+      <div class="ledger-row">
+        <span class="k">Price</span>
+        <span class="v">Nothing, if you're accepted.</span>
+        <span class="big">$0</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Stack</span>
+        <span class="v">Static, dedicated, Node.js, or whatever. No limitations, still free.</span>
+        <span class="big">Any</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Access</span>
+        <span class="v">Private. Invite only. Not open to the public.</span>
+        <span class="big">Invite</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Address</span>
+        <span class="v">A subdomain of zamanarvinservicesny.org.</span>
+        <span class="big">*.org</span>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Otherwise</span>
+        <span class="v">If I say no, that's the answer.</span>
+        <span class="big red">No</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 VERDICT: 680 -->
+  <section class="verdict">
+    <div class="section-head">
+      <h2>Two<br>outcomes</h2>
+      <span class="num">04 / Verdict</span>
+    </div>
+    <div class="verdicts">
+      <div class="card yes">
+        <div class="stamp">Free</div>
+        <ul>
+          <li>Static, dedicated, Node.js, or whatever, at no cost</li>
+          <li>You get a subdomain on zamanarvinservicesny.org</li>
+          <li>You're one of a few invited sites</li>
+        </ul>
+      </div>
+      <div class="card no">
+        <div class="stamp">Rejected</div>
+        <ul>
+          <li>No hosting</li>
+          <li>No paid tier to fall back on</li>
+          <li>No hard feelings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 FAQ: 720 -->
+  <section class="faq" id="faq">
+    <div class="section-head">
+      <h2>Questions</h2>
+      <span class="num">05 / FAQ</span>
+    </div>
+    <div class="qa">
+      <div>
+        <h4>Is it really free?</h4>
+        <p>Yes. Static, dedicated, Node.js, or whatever you run, with no limitations and no paid plan.</p>
+      </div>
+      <div>
+        <h4>How do I apply?</h4>
+        <p>Email zamanarvin711@gmail.com. Tell me about yourself and the site you want hosted.</p>
+      </div>
+      <div>
+        <h4>Who decides?</h4>
+        <p>I do. It's a private server, so every site on it is there by invitation.</p>
+      </div>
+      <div>
+        <h4>Where will my site live?</h4>
+        <p>On a subdomain of zamanarvinservicesny.org, like yourname.zamanarvinservicesny.org.</p>
+      </div>
+      <div>
+        <h4>Can I pay to get in?</h4>
+        <p>No. Money isn't part of the decision.</p>
+      </div>
+      <div>
+        <h4>What if I'm rejected?</h4>
+        <p>Then your site won't be hosted here. Free, or rejected. Those are the only two options.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 CONTACT + FOOTER: 576 -->
+  <section class="contact" id="contact">
+    <div class="eyebrow">06 / Apply</div>
+    <h2>Make your<br><span>case.</span></h2>
+    <div class="contact-row">
+      <a class="mail" href="mailto:zamanarvin711@gmail.com?subject=Hosting%20request">zamanarvin711@gmail.com</a>
+      <a class="btn" href="mailto:zamanarvin711@gmail.com?subject=Hosting%20request">Send request <span class="arrow">→</span></a>
+    </div>
+    <div class="footer">
+      <span>© 2026 Zaman Arvin Services NY</span>
+      <span>Private · Invite only · Free, or rejected</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
